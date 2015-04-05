@@ -1,0 +1,10 @@
+$(SML_LIB)/basis/basis.mlb
+                        $(SML_LIB)/basis/mlton.mlb
+                        $(SML_LIB)/basis/sml-nj.mlb
+                        ann 
+                                "allowFFI true"
+                                "allowOverload true"
+                                "nonexhaustiveMatch ignore"
+                                "redundantMatch ignore"
+                        in 21.sml 
+                        end
