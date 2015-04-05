@@ -1,0 +1,26 @@
+This repository contains C/assembly files to bootstrap MLton
+compiler on OpenBSD amd64
+
+To prepare the same set of files from scratch, follow the instructions
+below.
+
+1. If you have MLton compiler available on OpenBSD machine:
+
+* git clone https://github.com/MLton/mlton.git
+* git checkout on-20130715-release
+* gmake
+* cd mlton && mlton -stop g -target self mlton.mlb 
+
+
+2. If you have MLton compiler available on Linux machine:
+
+* git clone https://github.com/MLton/mlton.git
+* git checkout on-20130715-release
+* gmake
+* bin/add-cross unknown amd64 openbsd localhost
+* bin/regression -cross unknown
+* cd mlton && mlton -stop g -target unknown mlton.mlb 
+
+
+Then, to use the bootstrap files on a target machine, check OpenBSD 
+MLton port.
